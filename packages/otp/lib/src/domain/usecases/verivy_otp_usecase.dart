@@ -1,6 +1,7 @@
 import 'package:common_dependency/common_dependency.dart';
-import 'package:otp/src/domain/otp_entity.dart';
 import 'package:otp/src/domain/repositories/otp_repository.dart';
+
+import '../entities/otp_entities.dart';
 
 class VerifyOtpUseCase {
   final OtpRepository otpRepository;

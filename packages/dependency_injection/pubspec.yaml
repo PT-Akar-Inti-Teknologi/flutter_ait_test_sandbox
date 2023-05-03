@@ -14,6 +14,7 @@ dependencies:
   common_dependency: ^0.0.1
   auth: ^0.0.1
   navigation: ^0.0.1
+  otp: ^0.0.1
   #RemoteDeps
   auth_blocks:
     hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/

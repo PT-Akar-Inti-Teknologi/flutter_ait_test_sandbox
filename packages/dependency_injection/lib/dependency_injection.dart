@@ -2,8 +2,8 @@ import 'package:auth/auth.dart';
 import 'package:auth_blocks/auth_blocks.dart';
 import 'package:auth/auth_module.dart';
 import 'package:common_dependency/common_dependency.dart';
-import 'package:flutter/widgets.dart';
 import 'package:navigation/navigation.dart';
+import 'package:otp/otp_modules.dart';
 
 export 'package:dependency_injection/dependency_injection.dart';
 
@@ -16,6 +16,7 @@ class DependencyInjector {
   //package
   final AuthBlocksModule _authModule = AuthBlocksModule();
   final AuthModule _internalAuthModule = AuthModule();
+  final OtpModules _otpModules = OtpModules();
 
   Future<void> injectApp(
       {required String baseUrl,
@@ -37,5 +38,6 @@ class DependencyInjector {
     await _internalAuthModule();
     await _localizationModule(di);
     await _navigationModule(di);
+    await _otpModules();
   }
 }

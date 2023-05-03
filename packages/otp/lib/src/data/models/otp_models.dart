@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../domain/otp_entities.dart';
+import '../../domain/entities/otp_entities.dart';
 
 part 'otp_models.freezed.dart';
 part 'otp_models.g.dart';

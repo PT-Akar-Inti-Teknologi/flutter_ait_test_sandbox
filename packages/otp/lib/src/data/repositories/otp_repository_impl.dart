@@ -1,8 +1,8 @@
 import 'package:common_dependency/common_dependency.dart';
 import 'package:otp/src/data/datasource/otp_data_source.dart';
 import 'package:otp/src/data/models/otp_models.dart';
-import 'package:otp/src/domain/otp_entity.dart';
 
+import '../../domain/entities/otp_entities.dart';
 import '../../domain/repositories/otp_repository.dart';
 
 class OtpRepositoryImpl implements OtpRepository {
