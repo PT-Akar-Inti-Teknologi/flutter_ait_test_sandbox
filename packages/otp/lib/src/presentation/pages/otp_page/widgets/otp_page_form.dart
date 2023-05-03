@@ -16,6 +16,7 @@ class OtpForm extends StatelessWidget {
               appContext: context,
               length: 6,
               onChanged: (value) {
+                context.read<OtpCubit>().updateOtp(value);
                 // context.read<OtpCubit>().onChangePin(value);
               },
               cursorColor: color.white,

@@ -14,10 +14,15 @@ class OtpPageResendButton extends StatelessWidget {
         BlocSelector<OtpCubit, OtpState, int>(
             selector: (state) => state.resendTimer,
             builder: (context, state) {
-              return DesignText.h3(
-                state.toString(),
-                args: TextStyle(
-                    color: state == 0 ? color.primaryBase : color.white),
+              return InkWell(
+                onTap: () {
+                  context.read<OtpCubit>().resendOtp(context);
+                },
+                child: DesignText.h3(
+                  state.toString(),
+                  args: TextStyle(
+                      color: state == 0 ? color.primaryBase : color.white),
+                ),
               );
             }),
       ],

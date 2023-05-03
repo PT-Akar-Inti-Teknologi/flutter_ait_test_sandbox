@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$OtpState {
   String get otp => throw _privateConstructorUsedError;
+  FormzStatus get status => throw _privateConstructorUsedError;
   int get resendTimer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +30,7 @@ abstract class $OtpStateCopyWith<$Res> {
   factory $OtpStateCopyWith(OtpState value, $Res Function(OtpState) then) =
       _$OtpStateCopyWithImpl<$Res, OtpState>;
   @useResult
-  $Res call({String otp, int resendTimer});
+  $Res call({String otp, FormzStatus status, int resendTimer});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$OtpStateCopyWithImpl<$Res, $Val extends OtpState>
   @override
   $Res call({
     Object? otp = null,
+    Object? status = null,
     Object? resendTimer = null,
   }) {
     return _then(_value.copyWith(
@@ -53,6 +55,10 @@ class _$OtpStateCopyWithImpl<$Res, $Val extends OtpState>
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormzStatus,
       resendTimer: null == resendTimer
           ? _value.resendTimer
           : resendTimer // ignore: cast_nullable_to_non_nullable
@@ -68,7 +74,7 @@ abstract class _$$_OtpStateCopyWith<$Res> implements $OtpStateCopyWith<$Res> {
       __$$_OtpStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String otp, int resendTimer});
+  $Res call({String otp, FormzStatus status, int resendTimer});
 }
 
 /// @nodoc
@@ -83,6 +89,7 @@ class __$$_OtpStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? otp = null,
+    Object? status = null,
     Object? resendTimer = null,
   }) {
     return _then(_$_OtpState(
@@ -90,6 +97,10 @@ class __$$_OtpStateCopyWithImpl<$Res>
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormzStatus,
       resendTimer: null == resendTimer
           ? _value.resendTimer
           : resendTimer // ignore: cast_nullable_to_non_nullable
@@ -101,16 +112,20 @@ class __$$_OtpStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OtpState extends _OtpState {
-  _$_OtpState({required this.otp, required this.resendTimer}) : super._();
+  _$_OtpState(
+      {required this.otp, required this.status, required this.resendTimer})
+      : super._();
 
   @override
   final String otp;
+  @override
+  final FormzStatus status;
   @override
   final int resendTimer;
 
   @override
   String toString() {
-    return 'OtpState(otp: $otp, resendTimer: $resendTimer)';
+    return 'OtpState(otp: $otp, status: $status, resendTimer: $resendTimer)';
   }
 
   @override
@@ -119,12 +134,13 @@ class _$_OtpState extends _OtpState {
         (other.runtimeType == runtimeType &&
             other is _$_OtpState &&
             (identical(other.otp, otp) || other.otp == otp) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.resendTimer, resendTimer) ||
                 other.resendTimer == resendTimer));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, otp, resendTimer);
+  int get hashCode => Object.hash(runtimeType, otp, status, resendTimer);
 
   @JsonKey(ignore: true)
   @override
@@ -136,11 +152,14 @@ class _$_OtpState extends _OtpState {
 abstract class _OtpState extends OtpState {
   factory _OtpState(
       {required final String otp,
+      required final FormzStatus status,
       required final int resendTimer}) = _$_OtpState;
   _OtpState._() : super._();
 
   @override
   String get otp;
+  @override
+  FormzStatus get status;
   @override
   int get resendTimer;
   @override

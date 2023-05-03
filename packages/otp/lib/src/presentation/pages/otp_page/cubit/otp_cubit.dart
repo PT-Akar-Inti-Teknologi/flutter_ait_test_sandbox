@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:common_dependency/common_dependency.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:otp/src/domain/usecases/verivy_otp_usecase.dart';
 part 'otp_cubit.freezed.dart';
@@ -30,5 +31,70 @@ class OtpCubit extends Cubit<OtpState> with SyncEmit {
 
   initOtpPage() {
     startResendTimer();
+  }
+
+  void updateOtp(String otp) {
+    syncEmit(
+      (state) => state.copyWith(
+        otp: otp,
+      ),
+    );
+  }
+
+  void resendOtp(BuildContext context) {
+    if (state.resendTimer == 0) {
+      syncEmit(
+        (state) => state.copyWith(
+          resendTimer: 60,
+        ),
+      );
+      startResendTimer();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        customSnackBar(
+          content: 'Please Wait till resend timer is 0',
+        ),
+      );
+    }
+  }
+
+  Future<void> ontapButton(BuildContext context) async {
+    syncEmit(
+      (state) => state.copyWith(
+        status: FormzStatus.submissionInProgress,
+      ),
+    );
+    final res = await _verifyOtpUseCase.call(state.otp);
+    syncEmit(
+      (state) => state.copyWith(
+        status: FormzStatus.submissionSuccess,
+      ),
+    );
+    res.fold((l) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        customSnackBar(
+          content: l.toString(),
+        ),
+      );
+    }, (r) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        customSnackBar(
+          content: 'Otp Verified',
+          textColor: Colors.green,
+        ),
+      );
+    });
+  }
+
+  static SnackBar customSnackBar(
+      {required String content, Color textColor = Colors.redAccent}) {
+    return SnackBar(
+      backgroundColor: Colors.black,
+      key: const Key('resend_snackbar'),
+      content: Text(
+        content,
+        style: TextStyle(color: textColor, letterSpacing: 0.5),
+      ),
+    );
   }
 }
