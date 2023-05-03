@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'otp_entity.dart';
+part of 'otp_models.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,27 +14,32 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-mixin _$OtpEntity {
-  String get otp => throw _privateConstructorUsedError;
+OtpModel _$OtpModelFromJson(Map<String, dynamic> json) {
+  return _OtpModel.fromJson(json);
+}
 
+/// @nodoc
+mixin _$OtpModel {
+  String? get otp => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OtpEntityCopyWith<OtpEntity> get copyWith =>
+  $OtpModelCopyWith<OtpModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OtpEntityCopyWith<$Res> {
-  factory $OtpEntityCopyWith(OtpEntity value, $Res Function(OtpEntity) then) =
-      _$OtpEntityCopyWithImpl<$Res, OtpEntity>;
+abstract class $OtpModelCopyWith<$Res> {
+  factory $OtpModelCopyWith(OtpModel value, $Res Function(OtpModel) then) =
+      _$OtpModelCopyWithImpl<$Res, OtpModel>;
   @useResult
-  $Res call({String otp});
+  $Res call({String? otp});
 }
 
 /// @nodoc
-class _$OtpEntityCopyWithImpl<$Res, $Val extends OtpEntity>
-    implements $OtpEntityCopyWith<$Res> {
-  _$OtpEntityCopyWithImpl(this._value, this._then);
+class _$OtpModelCopyWithImpl<$Res, $Val extends OtpModel>
+    implements $OtpModelCopyWith<$Res> {
+  _$OtpModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -44,87 +49,101 @@ class _$OtpEntityCopyWithImpl<$Res, $Val extends OtpEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? otp = null,
+    Object? otp = freezed,
   }) {
     return _then(_value.copyWith(
-      otp: null == otp
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_OtpEntityCopyWith<$Res> implements $OtpEntityCopyWith<$Res> {
-  factory _$$_OtpEntityCopyWith(
-          _$_OtpEntity value, $Res Function(_$_OtpEntity) then) =
-      __$$_OtpEntityCopyWithImpl<$Res>;
+abstract class _$$_OtpModelCopyWith<$Res> implements $OtpModelCopyWith<$Res> {
+  factory _$$_OtpModelCopyWith(
+          _$_OtpModel value, $Res Function(_$_OtpModel) then) =
+      __$$_OtpModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String otp});
+  $Res call({String? otp});
 }
 
 /// @nodoc
-class __$$_OtpEntityCopyWithImpl<$Res>
-    extends _$OtpEntityCopyWithImpl<$Res, _$_OtpEntity>
-    implements _$$_OtpEntityCopyWith<$Res> {
-  __$$_OtpEntityCopyWithImpl(
-      _$_OtpEntity _value, $Res Function(_$_OtpEntity) _then)
+class __$$_OtpModelCopyWithImpl<$Res>
+    extends _$OtpModelCopyWithImpl<$Res, _$_OtpModel>
+    implements _$$_OtpModelCopyWith<$Res> {
+  __$$_OtpModelCopyWithImpl(
+      _$_OtpModel _value, $Res Function(_$_OtpModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? otp = null,
+    Object? otp = freezed,
   }) {
-    return _then(_$_OtpEntity(
-      otp: null == otp
+    return _then(_$_OtpModel(
+      otp: freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
+@JsonSerializable()
+class _$_OtpModel extends _OtpModel {
+  const _$_OtpModel({this.otp}) : super._();
 
-class _$_OtpEntity implements _OtpEntity {
-  const _$_OtpEntity({required this.otp});
+  factory _$_OtpModel.fromJson(Map<String, dynamic> json) =>
+      _$$_OtpModelFromJson(json);
 
   @override
-  final String otp;
+  final String? otp;
 
   @override
   String toString() {
-    return 'OtpEntity(otp: $otp)';
+    return 'OtpModel(otp: $otp)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OtpEntity &&
+            other is _$_OtpModel &&
             (identical(other.otp, otp) || other.otp == otp));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, otp);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OtpEntityCopyWith<_$_OtpEntity> get copyWith =>
-      __$$_OtpEntityCopyWithImpl<_$_OtpEntity>(this, _$identity);
+  _$$_OtpModelCopyWith<_$_OtpModel> get copyWith =>
+      __$$_OtpModelCopyWithImpl<_$_OtpModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_OtpModelToJson(
+      this,
+    );
+  }
 }
 
-abstract class _OtpEntity implements OtpEntity {
-  const factory _OtpEntity({required final String otp}) = _$_OtpEntity;
+abstract class _OtpModel extends OtpModel {
+  const factory _OtpModel({final String? otp}) = _$_OtpModel;
+  const _OtpModel._() : super._();
+
+  factory _OtpModel.fromJson(Map<String, dynamic> json) = _$_OtpModel.fromJson;
 
   @override
-  String get otp;
+  String? get otp;
   @override
   @JsonKey(ignore: true)
-  _$$_OtpEntityCopyWith<_$_OtpEntity> get copyWith =>
+  _$$_OtpModelCopyWith<_$_OtpModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

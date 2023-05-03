@@ -9,7 +9,7 @@ class VerifyOtpUseCase {
 
   Future<Either<Failure, Unit>> call(String otp) async {
     return await otpRepository.verifyOtp(
-      OtpEntity(otp: otp, userId: '0812140'),
+      OtpEntity(otp: otp),
     );
   }
 }

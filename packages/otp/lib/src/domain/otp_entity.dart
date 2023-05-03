@@ -5,6 +5,5 @@ part 'otp_entity.freezed.dart';
 class OtpEntity with _$OtpEntity {
   const factory OtpEntity({
     required String otp,
-    required String userId,
   }) = _OtpEntity;
 }
