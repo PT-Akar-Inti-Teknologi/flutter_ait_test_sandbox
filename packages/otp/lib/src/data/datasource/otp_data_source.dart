@@ -9,7 +9,7 @@ class OtpDataSourceImpl implements OtpDataSource {
   Future<OtpModel> verifyOtp(OtpModel body) async {
     await Future.delayed(const Duration(seconds: 1));
     if (body.otp == '123456') {
-      return const OtpModel(otp: '123');
+      return const OtpModel(otp: '123456');
     } else {
       throw Exception();
     }

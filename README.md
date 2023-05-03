@@ -74,3 +74,38 @@ Some packages that we will need for our testing
 
 - Run all
   - melos1 test:all
+
+---
+
+# Mocking
+
+Mocking is a technique used in unit testing to simulate the behavior of an object or function.
+
+It involves creating a fake object or function that can replace the real one during testing.
+
+In Flutter, Mocking is commonly used to simulate network requests and other external dependencies.
+
+The goal of mocking is to isolate the code being tested from external dependencies,
+
+making the tests more reliable and repeatable.
+
+---
+
+# Setup Test
+
+1. Setup
+   In Flutter testing, setUp is a function that runs before each test,
+   allowing for the creation and initialization of objects that are necessary for the execution of tests.
+   It is used to set up the environment for each test, like initializing mock objects and providing test data.
+   the setUp function runs once before all the tests in a test file.
+   This function is used to set up the environment for all tests in that file,
+   like initializing variables and opening connections to external services.
+
+- There are several benefits to using setUp in flutter test:
+
+  - It reduces the amount of code duplication, as the code that needs to be executed before all tests can be written once in the setUp function.
+  - It ensures that the environment is set up consistently before all tests, reducing the chance of errors or inconsistent test results.
+  - It makes it easier to change the environment for all tests at once, as the changes can be made in the setUp function instead of in each individual test.
+
+2. SetupAll
+   In Flutter testing, setUpAll is a function that allows you to run a specific setup code once before all the tests in a group or at the top level.
