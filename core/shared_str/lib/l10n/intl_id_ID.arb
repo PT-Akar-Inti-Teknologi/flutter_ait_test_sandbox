@@ -1,0 +1,11 @@
+{
+  "@@locale": "id_ID",
+  "auth_dont_have_account": "Tidak punya akun?   ",
+  "@auth_dont_have_account": null,
+  "auth_feat_register_here": "Register Disini",
+  "@auth_feat_register_here": null,
+  "auth_login": "Login",
+  "@auth_login": null,
+  "auth_welcome_login": "Selamat datang! Silahkan login",
+  "@auth_welcome_login": null
+}

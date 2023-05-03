@@ -1,0 +1,27 @@
+name: dependency_injection
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.4 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #LocalDeps
+  common_dependency: ^0.0.1
+  auth: ^0.0.1
+  navigation: ^0.0.1
+  #RemoteDeps
+  auth_blocks:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:

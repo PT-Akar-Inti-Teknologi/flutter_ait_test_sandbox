@@ -1,0 +1,77 @@
+name: ait_flutter_template
+
+packages:
+  - packages/**
+  - utils/**
+  - core/**
+  - app/**
+  - env
+command:
+  bootstrap:
+    usePubspecOverrides: true
+scripts:
+  build_runner:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter pub run build_runner build --delete-conflicting-outputs
+    description: Run a build_runner build in the ODM example app.
+    packageFilters:
+      dependsOn: "build_runner"
+  build_runner:watch:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter pub run build_runner watch --delete-conflicting-outputs
+    description: Run a build_runner build in the ODM example app.
+    packageFilters:
+      dependsOn: "build_runner"
+  build_runner:all:
+    run: melos run build_runner --no-select
+    description: run build runner for all package listed.
+  translate:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter pub run intl_utils:generate
+    description: Run a build_runner build in the ODM example app.
+    packageFilters:
+      dependsOn: "intl_utils"
+  sync_arb:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter pub run intl_utils:sync && flutter pub run intl_utils:generate
+    description: Run a build_runner build in the ODM example app.
+    packageFilters:
+      scope: 
+        - "shared_str"
+  test:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter test --no-pub --no-test-assets
+    description: Run `flutter test` for a specific package.
+    packageFilters:
+      dir-exists:
+        - test
+  test:all:
+    run: melos run test --no-select
+    description: Run `flutter test` for a specific package.
+  coverage:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter test --coverage --no-test-assets
+    description: Run `flutter test coverage` for a specific package.
+      - test
+  coverage:all: melos run coverage --no-select
+  gen_coverage: melos exec -- "E:\study\flutter\ait_flutter_template\ait_flutter_template\combine_coverage.sh"
+  env:
+    exec:
+      concurrency: 6
+      failFast: true
+    run: flutter pub run build_runner clean && flutter pub run build_runner build --delete-conflicting-outputs
+    description: Run a build_runner build in the ODM example app.
+    packageFilters:
+      dependsOn: "envied_generator"

@@ -1,0 +1,11 @@
+{
+  "@@locale": "en_US",
+  "auth_dont_have_account": "Don't have an account?   ",
+  "@auth_dont_have_account": null,
+  "auth_feat_register_here": "Register Here",
+  "@auth_feat_register_here": null,
+  "auth_login": "Login",
+  "@auth_login": null,
+  "auth_welcome_login": "Welcome back! Let's login to your account",
+  "@auth_welcome_login": null
+}

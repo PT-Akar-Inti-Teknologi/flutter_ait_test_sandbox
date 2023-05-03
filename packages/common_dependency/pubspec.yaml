@@ -1,0 +1,58 @@
+name: common_dependency
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #LocalDeps
+  nav_list: ^0.0.1
+  shared_str: ^0.0.1
+  #RemoteDeps
+  ait_api:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.2+11
+  ait_caching:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.2+2
+  ait_design_system:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.7+1
+  locale_switch:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.1
+  ait_app_localization:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.1+3
+  ait_bloc_base:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.2
+  formx_bloc:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.1
+  formx_validators:
+    hosted: https://dart.pkg.jetbrains.space/akarinti/p/main/dart/
+    version: ^0.0.1
+  flutter_hooks: ^0.18.5+1
+  equatable: ^2.0.5
+  flutter_screenutil: ^5.5.4
+  formz: ^0.4.1
+  flutter_bloc: ^8.1.1
+  dartz: ^0.10.1
+  go_router: ^6.0.6
+  get_it: ^7.2.0
+
+dev_dependencies:
+  freezed: ^2.1.1
+  flutter_lints: ^2.0.1
+  bloc_test: 9.1.0
+
+  flutter_test:
+    sdk: flutter
+
+flutter:
