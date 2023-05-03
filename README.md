@@ -21,25 +21,27 @@ Some packages that we will need for our testing
 
 # Test Directory
 
-some_packages
-├── lib
-│ ├── src
-│ │ ├── domain
-│ │ │ ├── repository
-│ │ │ │ ├── repository1
-│ │ │ │ └── repository2
-│ │ ├── presentation
-│ │ │ ├── pages1
-│ │ │ └── pages2
-├── test
-│ ├── src
-│ │ ├── domain
-│ │ │ ├── repository
-│ │ │ │ ├── repository1
-│ │ │ │ └── repository2
-│ │ ├── presentation
-│ │ │ ├── pages1
-│ │ │ └── pages2
+- some_packages
+  - lib
+    - src
+      - domain
+        - repository
+          - repository1.dart
+          - repository2.dart
+      - presentation
+        - page
+          - page1.dart
+          - page2.dart
+  - test
+    - src
+      - domain
+        - repository
+          - repository1_test.dart
+          - repository2_test.dart
+      - presentation
+        - page
+          - page1_test.dart
+          - page2_test.dart
 
 ---
 
@@ -49,4 +51,26 @@ some_packages
 - click dart:go to test/implementation files
 - create hotkeys
 
+---
+
 # How to Run test
+
+- Run Nearest
+
+  - ctrl+shift+p
+  - Test:run Test at cursor
+  - create hotkeys
+
+- Run File
+
+  - ctrl+shift+p
+  - Test:run Tests in current file
+  - create hotkeys
+
+- Run Package
+
+  - melos test
+  - select desired package to run test
+
+- Run all
+  - melos1 test:all
