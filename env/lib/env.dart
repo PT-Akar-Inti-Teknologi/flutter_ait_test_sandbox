@@ -2,7 +2,7 @@ import 'package:envied/envied.dart';
 
 part 'env.g.dart';
 
-@Envied(path: '../.env')
+@Envied(path: '../.env.example')
 abstract class Env {
   const Env._();
   @EnviedField(varName: 'APP_KEY', obfuscate: true)
